@@ -12,5 +12,8 @@ public class MyJFrame extends JFrame {
         this.setSize(800,800); // size of window
         this.setVisible(true); // make this visible
 
+        //task:  add image icon
+        //task: change color of ContentPane
+
     }
 }

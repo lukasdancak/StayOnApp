@@ -1,5 +1,7 @@
 package sk.lukasdancak.stayonapp;
 
+import sk.lukasdancak.stayonapp.view.MyJFrame;
+
 /**
  * Hello world!
  *
@@ -9,6 +11,7 @@ public class App
     public static void main( String[] args )
     {
 
-        System.out.println( "Hello World!" );
+        MyJFrame myJFrame = new MyJFrame(); // new window
+
     }
 }
