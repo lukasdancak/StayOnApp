@@ -1,5 +1,6 @@
 package sk.lukasdancak.stayonapp;
 
+import sk.lukasdancak.stayonapp.view.ClockLabel;
 import sk.lukasdancak.stayonapp.view.MyJFrame;
 
 /**
@@ -12,6 +13,7 @@ public class App
     {
 
         MyJFrame myJFrame = new MyJFrame(); // new window
+
 
     }
 }

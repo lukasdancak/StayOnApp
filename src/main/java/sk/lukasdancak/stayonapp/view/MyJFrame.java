@@ -11,9 +11,18 @@ public class MyJFrame extends JFrame {
         this.setResizable(false); // resizing of window/frame not allowed
         this.setSize(800,500); // size of window
         this.setVisible(true); // make this visible
-
         //task:  add image icon
         //task: change color of ContentPane
+        this.setLayout(null);
+
+        //clock label
+        ClockLabel clock = new ClockLabel();
+        this.add(clock);
+
+
+
+
+
 
     }
 }
