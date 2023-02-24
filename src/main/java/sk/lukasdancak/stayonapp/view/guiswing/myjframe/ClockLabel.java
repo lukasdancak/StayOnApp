@@ -1,4 +1,4 @@
-package sk.lukasdancak.stayonapp.view.guiswing.myframe;
+package sk.lukasdancak.stayonapp.view.guiswing.myjframe;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,9 +1,11 @@
-package sk.lukasdancak.stayonapp.view.guiswing.myframe;
+package sk.lukasdancak.stayonapp.view.guiswing.myjframe;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class MyJFrame extends JFrame {
+    ClockLabel clock;
+
 
     public MyJFrame() throws HeadlessException {
         this.setTitle("StayOn application"); // set title of frame
@@ -16,7 +18,7 @@ public class MyJFrame extends JFrame {
         this.setLayout(null);
 
         //clock label
-        ClockLabel clock = new ClockLabel();
+        clock = new ClockLabel();
         this.add(clock);
 
 

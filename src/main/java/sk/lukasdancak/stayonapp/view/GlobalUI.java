@@ -10,7 +10,10 @@ public abstract class GlobalUI implements UiInterface {
       return controller;
    }
 
-   public void setController(Controller controller) {
-      this.controller = controller;
+
+   public void add(Controller controller) {
+      this.controller=controller;
+
+
    }
 }
