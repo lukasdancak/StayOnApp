@@ -8,4 +8,5 @@ public interface UiInterface {
     void setClocklabel ();
     void setTimerLabel();
     void add(Controller controller);
+    void closeUI();
 }

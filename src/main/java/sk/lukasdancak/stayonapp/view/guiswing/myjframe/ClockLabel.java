@@ -10,7 +10,7 @@ public class ClockLabel extends JLabel {
 
         this.setText("label clock");
 
-        this.setBackground(Color.GREEN); // this will set background color
+        this.setBackground(Color.GRAY); // this will set background color
         this.setOpaque(true); // this will display background color
 
         this.setForeground(Color.RED);
@@ -19,7 +19,8 @@ public class ClockLabel extends JLabel {
         this.setHorizontalAlignment(JLabel.CENTER);
         this.setVerticalAlignment(JLabel.CENTER);
 
-        this.setSize(200,100);
+        //this.setSize(200,100);
+        this.setBounds(50,50,200,100);
 
 
 

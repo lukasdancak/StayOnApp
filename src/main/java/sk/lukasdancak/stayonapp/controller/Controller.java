@@ -10,6 +10,7 @@ public class Controller {
     public Controller(GlobalUI uiSolution, Model model) {
         this.uiSolution = uiSolution;
         this.model = model;
+        uiSolution.add(this);
     }
 
     public void run() {
