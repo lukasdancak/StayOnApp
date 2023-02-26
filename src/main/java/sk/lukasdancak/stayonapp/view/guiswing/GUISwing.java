@@ -5,6 +5,7 @@ import sk.lukasdancak.stayonapp.view.GlobalUI;
 import sk.lukasdancak.stayonapp.view.guiswing.myjframe.MyJFrame;
 
 import javax.swing.*;
+import java.time.LocalTime;
 
 
 public class GUISwing extends GlobalUI {
@@ -20,11 +21,20 @@ public class GUISwing extends GlobalUI {
 
         //creates window
         myJFrame = new MyJFrame();
-        myJFrame.startButton.addActionListener(e->startPressed());
+        myJFrame.getStartButton().addActionListener(e->startPressed());
+        myJFrame.getStopButton().addActionListener(e->stopPressed());
+
 
     }
 
+    //call to controler
+    private void stopPressed() {
+        super.controller.stopTimer();
+    }
+
+    //call to controller
     private void startPressed() {
+        super.controller.startTimer();
     }
 
 
@@ -34,8 +44,14 @@ public class GUISwing extends GlobalUI {
     }
 
     @Override
-    public void setTimerLabel() {
+    public void setTimerLabel(String text) {
+        myJFrame.clockLabel.setText(text);
 
+    }
+
+    @Override
+    public void setLocalTimeLabel(String text) {
+        myJFrame.localTimeLabel.setText(text);
     }
 
     @Override

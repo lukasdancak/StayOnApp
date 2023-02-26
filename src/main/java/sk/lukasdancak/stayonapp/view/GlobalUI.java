@@ -3,7 +3,7 @@ package sk.lukasdancak.stayonapp.view;
 import sk.lukasdancak.stayonapp.controller.Controller;
 
 public abstract class GlobalUI implements UiInterface {
-   private Controller controller;
+   protected Controller controller;
 
    public Controller getController() {
       return controller;
