@@ -15,7 +15,7 @@ public class MyJFrame extends JFrame {
         this.setDefaultCloseOperation(MyJFrame.EXIT_ON_CLOSE); // set exit from application
         this.setResizable(false); // resizing of window/frame not allowed
         this.setSize(510,500); // size of window
-        this.setVisible(true); // make this visible
+
         //task:  add image icon
         //task: change color of ContentPane
         JPanel c = (JPanel) this.getContentPane();
@@ -33,6 +33,7 @@ public class MyJFrame extends JFrame {
         //stop button
         stopButton=new StopButton();
         c.add(stopButton);
+        this.setVisible(true); // make this visible
 
     }
 
