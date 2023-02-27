@@ -4,8 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MyJFrame extends JFrame {
-    public ClockLabel clockLabel;
-    public ClockLabel localTimeLabel;
+    public DurationTimeLabel durationLabel;
+    public LocalTimeLabel localTimeLabel;
     public StartButton startButton;
     StopButton stopButton;
 
@@ -14,19 +14,18 @@ public class MyJFrame extends JFrame {
         this.setDefaultLookAndFeelDecorated(true);
         this.setDefaultCloseOperation(MyJFrame.EXIT_ON_CLOSE); // set exit from application
         this.setResizable(false); // resizing of window/frame not allowed
-        this.setSize(500,500); // size of window
+        this.setSize(510,500); // size of window
         this.setVisible(true); // make this visible
         //task:  add image icon
         //task: change color of ContentPane
         JPanel c = (JPanel) this.getContentPane();
         this.getContentPane().setLayout(null);
 
+        //duration time label
+        durationLabel = new DurationTimeLabel();
+        c.add(durationLabel);
         //local time label
-        clockLabel = new ClockLabel();
-        c.add(clockLabel);
-        //counter label
-        localTimeLabel = new ClockLabel();
-        localTimeLabel.setBounds(250,50,200,100); // need to put to specific class
+        localTimeLabel = new LocalTimeLabel();
         c.add(localTimeLabel);
         //start button
         startButton=new StartButton();

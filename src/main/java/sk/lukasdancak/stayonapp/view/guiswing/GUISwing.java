@@ -1,11 +1,7 @@
 package sk.lukasdancak.stayonapp.view.guiswing;
 
-import sk.lukasdancak.stayonapp.controller.Controller;
 import sk.lukasdancak.stayonapp.view.GlobalUI;
 import sk.lukasdancak.stayonapp.view.guiswing.myjframe.MyJFrame;
-
-import javax.swing.*;
-import java.time.LocalTime;
 
 
 public class GUISwing extends GlobalUI {
@@ -45,13 +41,13 @@ public class GUISwing extends GlobalUI {
 
     @Override
     public void setTimerLabel(String text) {
-        myJFrame.clockLabel.setText(text);
+        myJFrame.durationLabel.updateTimeinLabel(text);
 
     }
 
     @Override
     public void setLocalTimeLabel(String text) {
-        myJFrame.localTimeLabel.setText(text);
+        myJFrame.localTimeLabel.updateTimeinLabel(text);
     }
 
     @Override

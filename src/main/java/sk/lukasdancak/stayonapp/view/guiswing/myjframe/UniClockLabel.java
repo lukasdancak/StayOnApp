@@ -4,8 +4,16 @@ import javax.swing.*;
 import java.awt.*;
 
 public class UniClockLabel extends JLabel {
+    final String htmlPart1 ="<html><center><b>";
+    String stringForname;
+    final String htmlPart2="</b><br><font color=#ffffdd>";
+    String stringForTime="0:00:00";
+   final String htmlPart3="</font>";
+   String labelTextSumPart1;
+   String labelTextSumAll;
 
-    public UniClockLabel() {
+    public UniClockLabel(String nameOfLabel) {
+        stringForname=nameOfLabel;
         this.setBackground(Color.GRAY); // this will set background color
         this.setOpaque(true); // this will display background color
 
@@ -14,5 +22,17 @@ public class UniClockLabel extends JLabel {
 
         this.setHorizontalAlignment(JLabel.CENTER);
         this.setVerticalAlignment(JLabel.CENTER);
+    }
+
+    void createLabelTextSumPart1(){
+        labelTextSumPart1=htmlPart1+stringForname+htmlPart2;
+    }
+    void createLabelTextSumAll(){
+        labelTextSumAll=labelTextSumPart1+stringForTime+htmlPart3;
+    }
+    public void updateTimeinLabel(String text){
+        stringForTime=text;
+        createLabelTextSumAll();
+        setText(labelTextSumAll);
     }
 }

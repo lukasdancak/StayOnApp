@@ -5,7 +5,6 @@ import sk.lukasdancak.stayonapp.view.GlobalUI;
 
 import java.awt.*;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Random;
@@ -17,10 +16,8 @@ public class Controller {
     GlobalUI uiSolution;
     Model model;
     boolean isTimerOn = false;
-    int seconds;
     LocalDateTime actualDateTime;
-    LocalDateTime atStartOfCounter;
-
+    LocalDateTime atStartDaT;
     DateTimeFormatter dtf = DateTimeFormatter.ISO_LOCAL_TIME;
     DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("HH:mm:ss");
     PointerInfo a; // position of mouse
@@ -28,10 +25,9 @@ public class Controller {
     int x;
     int y;
     Robot r;
-    long noOfSeconds;
+    long noOfSec;
 
     Random rand = new Random();
-
 
 
     public Controller(GlobalUI uiSolution, Model model) {
@@ -52,10 +48,8 @@ public class Controller {
             actualDateTime =LocalDateTime.now();
             uiSolution.setLocalTimeLabel( actualDateTime.withNano(0).format(dtf).toString() );
             if(isTimerOn){
-                noOfSeconds = atStartOfCounter.until(actualDateTime, ChronoUnit.SECONDS);
-
-                seconds++;
-                uiSolution.setTimerLabel(String.format("%d:%02d:%02d", noOfSeconds / 3600, (noOfSeconds % 3600) / 60, (noOfSeconds % 60)));
+                noOfSec = atStartDaT.until(actualDateTime, ChronoUnit.SECONDS);
+                uiSolution.setTimerLabel(String.format("%d:%02d:%02d", noOfSec / 3600, (noOfSec % 3600) / 60, (noOfSec % 60)));
                 moveMouseCursor();
             }
 
@@ -84,12 +78,12 @@ public class Controller {
 
     public void stopTimer() {
         isTimerOn=false;
-        atStartOfCounter=null;
+        atStartDaT =null;
     }
 
     public void startTimer() {
         isTimerOn=true;
-        atStartOfCounter= LocalDateTime.now();
-        seconds=0;
+        atStartDaT = LocalDateTime.now();
+
     }
 }

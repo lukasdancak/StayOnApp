@@ -6,7 +6,7 @@ public class StartButton extends UniJButton {
 
     public StartButton() {
         super("START");
-        this.setBounds(50,150,200,100);
+        this.setBounds(50,160,200,100);
         this.setBackground(Color.GREEN);
             }
 }
