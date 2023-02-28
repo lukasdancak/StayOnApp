@@ -41,13 +41,13 @@ public class GUISwing extends GlobalUI {
 
     @Override
     public void setTimerLabel(String text) {
-        myJFrame.durationLabel.updateTimeinLabel(text);
+        myJFrame.durationLabel.updateTimeInLabel(text);
 
     }
 
     @Override
     public void setLocalTimeLabel(String text) {
-        myJFrame.localTimeLabel.updateTimeinLabel(text);
+        myJFrame.localTimeLabel.updateTimeInLabel(text);
     }
 
     @Override

@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class UniClockLabel extends JLabel {
     final String htmlPart1 ="<html><center><b>";
-    String stringForname;
+    String stringForName;
     final String htmlPart2="</b><br><font color=#ffffdd>";
     String stringForTime="0:00:00";
    final String htmlPart3="</font>";
@@ -13,7 +13,7 @@ public class UniClockLabel extends JLabel {
    String labelTextSumAll;
 
     public UniClockLabel(String nameOfLabel) {
-        stringForname=nameOfLabel;
+        stringForName =nameOfLabel;
         this.setBackground(Color.GRAY); // this will set background color
         this.setOpaque(true); // this will display background color
 
@@ -25,12 +25,12 @@ public class UniClockLabel extends JLabel {
     }
 
     void createLabelTextSumPart1(){
-        labelTextSumPart1=htmlPart1+stringForname+htmlPart2;
+        labelTextSumPart1=htmlPart1+ stringForName +htmlPart2;
     }
     void createLabelTextSumAll(){
         labelTextSumAll=labelTextSumPart1+stringForTime+htmlPart3;
     }
-    public void updateTimeinLabel(String text){
+    public void updateTimeInLabel(String text){
         stringForTime=text;
         createLabelTextSumAll();
         setText(labelTextSumAll);
