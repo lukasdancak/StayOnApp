@@ -19,15 +19,15 @@ public class Controller {
     LocalDateTime actualDateTime;
     LocalDateTime atStartDaT;
     DateTimeFormatter dtf = DateTimeFormatter.ISO_LOCAL_TIME;
-    DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("HH:mm:ss");
     PointerInfo a; // position of mouse
     Point b; //point of mouse posiiton, from PointerInfo
     int x;
     int y;
     Robot r;
-    long noOfSec;
-
+    long numOfSec;
+    int periodOfMove=60;
     Random rand = new Random();
+    int cursorMoveRange=10;
 
 
     public Controller(GlobalUI uiSolution, Model model) {
@@ -42,15 +42,15 @@ public class Controller {
             try {
                 TimeUnit.SECONDS.sleep(1);
             } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+                throw new RuntimeException(e); // ???
             }
 
             actualDateTime =LocalDateTime.now();
             uiSolution.setLocalTimeLabel( actualDateTime.withNano(0).format(dtf).toString() );
             if(isTimerOn){
-                noOfSec = atStartDaT.until(actualDateTime, ChronoUnit.SECONDS);
-                uiSolution.setTimerLabel(String.format("%d:%02d:%02d", noOfSec / 3600, (noOfSec % 3600) / 60, (noOfSec % 60)));
-                moveMouseCursor();
+                numOfSec = atStartDaT.until(actualDateTime, ChronoUnit.SECONDS);
+                uiSolution.setTimerLabel(String.format("%d:%02d:%02d", numOfSec / 3600, (numOfSec % 3600) / 60, (numOfSec % 60)));
+                if(numOfSec %periodOfMove==0){moveMouseCursor();} //move only evry X seconds
             }
 
         }
@@ -73,7 +73,7 @@ public class Controller {
     //generates random int number from (-100) to (+100)
     private int myRandomInt(){
         // master:  random.nextInt(max - min) + min ; my min =-100, my max=100
-        return rand.nextInt(100 +100)-100;
+        return rand.nextInt(cursorMoveRange +cursorMoveRange)-cursorMoveRange;
     }
 
     public void stopTimer() {

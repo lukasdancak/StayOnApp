@@ -14,7 +14,7 @@ public class MyJFrame extends JFrame {
         this.setDefaultLookAndFeelDecorated(true);
         this.setDefaultCloseOperation(MyJFrame.EXIT_ON_CLOSE); // set exit from application
         this.setResizable(false); // resizing of window/frame not allowed
-        this.setSize(510,500); // size of window
+        this.setSize(520,460); // size of window
 
         //task:  add image icon
         //task: change color of ContentPane
